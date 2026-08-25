@@ -1,7 +1,11 @@
 package br.com.alura.screenmatch.modelos;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Titulo {
+    @SerializedName("Title")
     private String nome;
+    @SerializedName("Year")
     private int anoDeLancamento;
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
@@ -61,5 +65,15 @@ public class Titulo {
 
     public double pegaMedia(){
         return somaDasAvaliacoes / totalDeAvaliacoes;
+    }
+
+    //@Override
+    //public int compareTo(outroTitulo) { return this.getNome().compareTo(outroTitulo);}
+
+
+    @Override
+    public String toString() {
+        return "Nome= " + nome +
+                ",  Ano De Lancamento = " + anoDeLancamento;
     }
 }
